@@ -1,0 +1,49 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Currency Conversion API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/convert/BRL/{value}": {
+      "get": {
+        "summary": "Convert value from BRL to other currencies",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "description": "The value to convert",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful conversion",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "The converted value",
+                  "example": {
+                    "USD": "108.40",
+                    "EUR": "100.75",
+                    "INR": "8937.46"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid value provided"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  }
+}
