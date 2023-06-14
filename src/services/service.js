@@ -1,31 +1,24 @@
-const JSONData = require('../client/JSONData.js')
-
-const currencyService = async (req, res) => {
+const currencyService = async (inputValue, floatRatesClient) => {
   try {
-    const inputValue = Number(req.params.value)
+    const conversionTable = await floatRatesClient()
 
-    const currency = await JSONData()
-    const currencyRateUSD = currency.usd.rate
-    const currencyRateEUR = currency.eur.rate
-    const currencyRateINR = currency.inr.rate
+    const currencies = ["usd", "eur", "inr"]
 
-    const usd = (currencyConverter(currencyRateUSD ,inputValue))
-    const eur = (currencyConverter(currencyRateEUR ,inputValue))
-    const inr = (currencyConverter(currencyRateINR ,inputValue))
+    let result = {}
 
-    return {
-      USD: usd,
-      EUR: eur,
-      INR: inr
-    }
+    currencies.forEach((currency) => {
+      const rate = conversionTable[currency].rate
+
+      const convertedValue = Math.trunc(rate * inputValue * 100) / 100
+
+      result[currency.toUpperCase()] = convertedValue
+    })
+
+    return result
+
   } catch (error) {
     console.error('Error on: ', error)
-    return res.status(500).json({message: 'Internal error'})
   }
-}
-
-const currencyConverter = (currency, inputValue) => {
-  return (currency * inputValue).toFixed(2)
 }
 
 module.exports = { currencyService }

@@ -50,7 +50,7 @@ BRL currency converter for other currencies.
 
 | Parameter  | Type     | Description                              | Required |
 | ---------- | -------- | ---------------------------------------- | -------- |
-| `param`   | `number`   | The value to convert              | Yes
+| `value`   | `number`   | The value to convert              | Yes
 
 #### Request
 
@@ -62,9 +62,9 @@ Example response from Currency Converter BRL:
 
 ```json
 {
-  "USD": "108.40",
-  "EUR": "100.75",
-  "INR": "8937.46"
+  "USD": 108.40,
+  "EUR": 100.75,
+  "INR": 8937.46
 }
 ```
 

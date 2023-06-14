@@ -1,9 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { ping, currencyController } = require('../controllers/controller.js')
-
-router.get('/ping', ping);
+const { currencyController } = require('../controllers/controller.js')
 
 router.get('/convert/BRL/:value', currencyController);
 

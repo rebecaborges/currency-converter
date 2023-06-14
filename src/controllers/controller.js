@@ -1,17 +1,16 @@
 const { currencyService } = require('../services/service.js')
-
-const ping = ( async (req, res) => {
-  await res.status(200).json({message: 'pong'})
-})
+const floatRatesClient = require('../client/floatRates.js')
 
 const currencyController = ( async (req, res) => {
   try {
-    const responseService = await currencyService(req, res)
+    const inputValue = Number(req.params.value)
 
-    res.json(responseService)
+    const responseService = await currencyService(inputValue, floatRatesClient)
+
+    return res.json(responseService)
   } catch (error) {
-    console.error('Error on: ', error)
+    console.error('Error: ', error)
   }
 })
 
-module.exports = { ping, currencyController }
+module.exports = { currencyController }
