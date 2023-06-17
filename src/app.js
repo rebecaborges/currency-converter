@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const routes = require('./routes/route.js')
 const swaggerUi = require('swagger-ui-express');
@@ -29,5 +30,6 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.listen(PORT, () => console.log(`Connected on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`))
 
+module.exports = app

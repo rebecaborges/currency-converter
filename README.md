@@ -72,10 +72,10 @@ Example response from Currency Converter BRL:
 Documentation made with openAPI, which can be tested the API.
 
 - HTTP Method: [GET]
-- Endpoint: `/api/docs`
+- Endpoint: `/docs`
 
 Example request for the endpoint:
-`GET /api/docs`
+`GET /docs`
 
 <br>
 
