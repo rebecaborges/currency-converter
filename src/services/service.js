@@ -17,7 +17,8 @@ const currencyService = async (inputValue, floatRatesClient) => {
     return result
 
   } catch (error) {
-    console.error('Error on: ', error)
+    console.error('Error on service: ', error)
+    throw error
   }
 }
 

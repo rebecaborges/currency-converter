@@ -6,10 +6,6 @@ const floatRatesClient = require('../../client/floatRates.js')
 jest.mock('../../client/floatRates')
 
 describe('GET /convert/BRL/:value', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
   it('should return the converted currency', async () => {
     await floatRatesClient.mockResolvedValue(floatRatesMock)
 

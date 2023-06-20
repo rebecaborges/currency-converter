@@ -9,7 +9,8 @@ const currencyController = ( async (req, res) => {
 
     return res.json(convertedCurrency)
   } catch (error) {
-    console.error('Error: ', error)
+    console.error('Error on controller: ', error)
+    return res.status(500).send({message: "Internal Error"})
   }
 })
 

@@ -3,7 +3,6 @@
   "verbose": true,
   "clearMocks": true,
   "resetMocks": true,
-  "forceExit": true,
   "coverageThreshold": {
     "global": {
       "branches": 80,

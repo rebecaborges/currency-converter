@@ -17,18 +17,10 @@ app.use(
     apiSpec: './openapi.json',
     validateRequests: true,
     validateResponses: true,
-  }),
+  })
 )
 
 app.use("/api", routes)
-
-app.use((err, req, res, next) => {
-
-  res.status(err.status || 500).json({
-    message: err.message,
-    errors: err.errors,
-  })
-})
 
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`))
 
