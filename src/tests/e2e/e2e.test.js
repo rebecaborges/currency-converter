@@ -6,7 +6,7 @@ const floatRatesClient = require('../../client/floatRates.js')
 jest.mock('../../client/floatRates')
 
 describe('GET /convert/:currency/:value', () => {
-  it('should return the converted currency', async () => {
+  it('should return list of converted currencies', async () => {
     await floatRatesClient.mockResolvedValue(floatRatesMock)
 
     await request(app)
@@ -21,11 +21,5 @@ describe('GET /convert/:currency/:value', () => {
           INR: 1686.34
         }
       })
-  })
-
-  afterEach(() => {
-    if (expect.getState().passed) {
-      process.exit();
-    }
   })
 })
