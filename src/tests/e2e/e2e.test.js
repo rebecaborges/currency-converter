@@ -5,12 +5,12 @@ const floatRatesClient = require('../../client/floatRates.js')
 
 jest.mock('../../client/floatRates')
 
-describe('GET /convert/BRL/:value', () => {
+describe('GET /convert/:currency/:value', () => {
   it('should return the converted currency', async () => {
     await floatRatesClient.mockResolvedValue(floatRatesMock)
 
     await request(app)
-      .get('/api/convert/BRL/100')
+      .get('/api/convert/brl/100')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -21,5 +21,11 @@ describe('GET /convert/BRL/:value', () => {
           INR: 1686.34
         }
       })
+  })
+
+  afterEach(() => {
+    if (expect.getState().passed) {
+      process.exit();
+    }
   })
 })

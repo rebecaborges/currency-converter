@@ -3,14 +3,15 @@ const { currencyService } = require('../../services/service.js');
 jest.mock('../../services/service.js')
 
 describe('currencyController', () => {
-  it('should return a JSON response with the service result', async () => {
+  it('should return a JSON response with the result of the currencyService', async () => {
     const inputValue = {
       params: {
+        currency: 'brl',
         value: "100"
       }
     }
 
-    const res = { json: jest.fn()}
+    const res = { json: jest.fn() }
 
     const convertedCurrency = {
       EUR: 19.01,
