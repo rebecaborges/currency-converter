@@ -44,18 +44,19 @@ Base URL for all API endpoints: `https://localhost:3000`
 BRL currency converter for other currencies.
 
 - HTTP Method: [GET]
-- Endpoint: `/api/convert/BRL/:value`
+- Endpoint: `/api/convert/:currency/:value`
 
 #### Parameters
 
 | Parameter  | Type     | Description                              | Required |
 | ---------- | -------- | ---------------------------------------- | -------- |
-| `value`   | `number`   | The value to convert              | Yes
+| `currency`   | `string`   | Conversion currency             | Yes
+| `value`   | `number`   | Value to convert              | Yes
 
 #### Request
 
 Example request for the endpoint:
-`GET /api/convert/BRL/529.99`
+`GET /api/convert/brl/529.99`
 
 #### Response
 Example response from Currency Converter BRL:
