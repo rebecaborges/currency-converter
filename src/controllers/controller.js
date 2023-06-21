@@ -5,7 +5,11 @@ const currencyController = ( async (req, res) => {
   try {
     const inputValue = Number(req.params.value)
 
-    const convertedCurrency = await currencyService(inputValue, floatRatesClient)
+    const currency = req.params.currency
+
+    const floatRates = await floatRatesClient(currency)
+
+    const convertedCurrency = await currencyService(inputValue, currency, floatRates)
 
     return res.json(convertedCurrency)
   } catch (error) {

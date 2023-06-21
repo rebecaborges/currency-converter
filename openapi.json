@@ -5,10 +5,20 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/api/convert/BRL/{value}": {
+    "/api/convert/{currency}/{value}": {
       "get": {
         "summary": "Convert value from BRL to other currencies",
         "parameters": [
+          {
+            "name": "currency",
+            "in": "path",
+            "description": "Conversion currency",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["brl"]
+            }
+          },
           {
             "name": "value",
             "in": "path",
@@ -26,7 +36,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "The converted value",
+                  "description": "List of currencies converted",
                   "example": {
                     "USD": "108.40",
                     "EUR": "100.75",

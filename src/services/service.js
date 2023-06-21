@@ -1,17 +1,22 @@
-const currencyService = async (inputValue, floatRatesClient) => {
+const currencyService = async (inputValue, inputCurrency, floatRatesClient) => {
   try {
-    const conversionTable = await floatRatesClient()
+    let result = {}
+
+    const conversionTable = await floatRatesClient
 
     const currencies = ["usd", "eur", "inr"]
 
-    let result = {}
-
     currencies.forEach((currency) => {
-      const rate = conversionTable[currency].rate
+      if (!conversionTable[currency]) {
+        result[inputCurrency.toUpperCase()] = inputValue
+      } else {
 
-      const convertedValue = Math.trunc(rate * inputValue * 100) / 100
+        const rate = conversionTable[currency].rate
 
-      result[currency.toUpperCase()] = convertedValue
+        const convertedValue = Math.trunc(rate * inputValue * 100) / 100
+
+        result[currency.toUpperCase()] = convertedValue
+      }
     })
 
     return result

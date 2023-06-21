@@ -3,6 +3,6 @@ const { currencyController } = require('../controllers/controller.js')
 
 const router = express.Router()
 
-router.get('/convert/BRL/:value', currencyController)
+router.get('/convert/:currency/:value', currencyController)
 
 module.exports = router;
