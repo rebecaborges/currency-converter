@@ -8,7 +8,7 @@
     "start": "nodemon node src/app.js",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest ./tests/integration-tests/e2e.test.js",
+    "test:e2e": "jest src/tests/e2e/e2e.test.js",
     "lint": "eslint . --ext .js"
   },
   "dependencies": {
