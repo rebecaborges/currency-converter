@@ -16,7 +16,9 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["brl"]
+              "enum": [
+                "brl"
+              ]
             }
           },
           {

@@ -50,8 +50,8 @@ BRL currency converter for other currencies.
 
 | Parameter  | Type     | Description                              | Required |
 | ---------- | -------- | ---------------------------------------- | -------- |
-| `currency`   | `string`   | Conversion currency             | Yes
-| `value`   | `number`   | Value to convert              | Yes
+| `currency` | `string` | Conversion currency                      | Yes
+| `value`    | `number` | Value to convert                         | Yes
 
 #### Request
 
