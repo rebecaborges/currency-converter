@@ -6,6 +6,14 @@ Welcome to the Currency Converter API documentation. This API provides to conver
 
 <br>
 
+## Configuration
+Create an `.env` file and add the following environment variables as in the `.env-example`:
+
+```
+PORT=3000
+FLOAT_RATES_URL="http://www.floatrates.com/daily/"
+```
+
 ## Instalation
 
 ```bash
