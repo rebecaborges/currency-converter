@@ -4,7 +4,7 @@ const currencyService = async (inputValue, inputCurrency, floatRatesClient) => {
 
     const conversionTable = await floatRatesClient
 
-    const currencies = ["usd", "eur", "inr"]
+    const currencies = ['usd', 'eur', 'inr']
 
     currencies.forEach((currency) => {
       if (!conversionTable[currency]) {

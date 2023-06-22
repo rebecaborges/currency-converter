@@ -8,7 +8,8 @@
     "start": "nodemon node src/app.js",
     "test": "jest",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest ./tests/integration-tests/e2e.test.js"
+    "test:e2e": "jest ./tests/integration-tests/e2e.test.js",
+    "lint": "eslint . --ext .js"
   },
   "dependencies": {
     "dotenv": "^16.3.0",
@@ -17,6 +18,7 @@
     "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
+    "eslint": "^8.43.0",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"

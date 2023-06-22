@@ -5,4 +5,4 @@ const router = express.Router()
 
 router.get('/convert/:currency/:value', currencyController)
 
-module.exports = router;
+module.exports = router

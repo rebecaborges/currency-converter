@@ -1,5 +1,5 @@
 const { currencyController } = require('../../controllers/controller.js')
-const { currencyService } = require('../../services/service.js');
+const { currencyService } = require('../../services/service.js')
 jest.mock('../../services/service.js')
 
 describe('currencyController', () => {
@@ -7,7 +7,7 @@ describe('currencyController', () => {
     const inputValue = {
       params: {
         currency: 'brl',
-        value: "100"
+        value: '100'
       }
     }
 

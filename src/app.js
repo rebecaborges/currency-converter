@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const routes = require('./routes/route.js')
-const swaggerUi = require('swagger-ui-express');
+const swaggerUi = require('swagger-ui-express')
 const OpenApiValidator = require('express-openapi-validator')
 const swaggerDocument = require('../openapi.json')
 
@@ -20,7 +20,7 @@ app.use(
   })
 )
 
-app.use("/api", routes)
+app.use('/api', routes)
 
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({

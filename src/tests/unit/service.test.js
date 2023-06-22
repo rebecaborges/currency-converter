@@ -5,7 +5,7 @@ describe('currencyService', () => {
   it('should return a list of converted currency values to BRL currency', async () => {
     const inputValue = 100
 
-    const inputCurrency = "brl"
+    const inputCurrency = 'brl'
 
     const convertionObject = await currencyService(inputValue, inputCurrency, floatRatesMock)
 
@@ -19,7 +19,7 @@ describe('currencyService', () => {
   it('should return a list of converted currency values to USD currency', async () => {
     const inputValue = 100
 
-    const inputCurrency = "usd"
+    const inputCurrency = 'usd'
 
     const mockedFloatRatesClient = {
       eur: { rate: 0.9 },
